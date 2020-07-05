@@ -16,6 +16,16 @@ Nodejs 结合 express 框架
 
 使用 MongoDB 搭建数据结构
 
+简化储存校验，校验放给前端页面处理
+（如果要使用数据库校验，可使用自定义验证器[validate](http://www.mongoosejs.net/docs/validation.html#自定义验证器)，通过传入自建函数来实现校验）
+
+数据库结构：
+
+- dnd
+  + weapons
+  + armor
+  + …
+
 ### 前端页面搭建
 
 - 首页：
