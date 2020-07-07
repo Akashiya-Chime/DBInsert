@@ -14,15 +14,33 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+ <![endif]-->
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
-
+    <style>
+        button {
+            font-size: 18px;
+            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            background-size: 400%;
+            width: 100px;
+            height: 35px;
+            color: white;
+            border-radius: 20px;
+        }
+        button:hover {
+            animation: sun 8s infinite;
+        }
+        @keyframes sun{
+            100%{
+                background-position: -400% 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -53,13 +71,16 @@
 
     <div style="padding: 1.5rem;">
         <!-- 说明信息 -->
-        <p>这里是说明信息</p>
+        <p>武器价格按照金币为单位计算，10银币=1金币。伤害以“xdx”的格式，比如匕首伤害(S)就是1d3。
+            重击如果只有倍数就只填倍数，如果有范围则写明，如19-20/2。
+        </p>
+        <b>例子：匕首，1金币，1d3，1d4，19-20/2，10尺，1磅，穿刺或挥砍</b>
     </div>
 
     <!-- 武器:
     武器名称、价格、伤害值(S)、伤害值(M)、重击、射程增量、重量、伤害类别
 -->
-    <div style="padding: 1.5rem;">
+    <div class="details" style="padding: 1.5rem; float: left;">
         <div>
             <dl>武器名称
                 <dt>
@@ -103,7 +124,7 @@
             </dl>
         </div>
     </div>
-    <button>录入</button>
+    <button style="margin-left: 1.5rem">录入</button>
 
 </body>
 
