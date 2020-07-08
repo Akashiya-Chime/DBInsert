@@ -14,15 +14,35 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+ <![endif]-->
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
+    <style>
+        button {
+            font-size: 18px;
+            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            background-size: 400%;
+            width: 100px;
+            height: 35px;
+            color: white;
+            border-radius: 20px;
+        }
 
+        button:hover {
+            animation: sun 8s infinite;
+        }
+
+        @keyframes sun {
+            100% {
+                background-position: -400% 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,61 +71,61 @@
 
     <!-- 具体录入 -->
 
-    <!-- 防具:
-    防具名称、价格、盔甲或盾牌加值、最大敏捷加值、防具检定减值、奥数失效几率、速度、重量
--->
-    <div style="padding: 1.5rem;">
+    <div style="padding: 1.5rem; color: #bd2d30;">
         <!-- 说明信息 -->
-        <p>这里是说明信息</p>
-    </div>
-    <div>
-        <div style="padding: 1.5rem;">
-            <div>
-                <dl>防具名称
-                    <dt>
-                        <input type="text">
-                    </dt>
-                </dl>
-                <dl>价格
-                    <dt>
-                        <input type="text">金币
-                    </dt>
-                </dl>
-                <dl>盔甲或盾牌加值
-                    <dt>
-                        <input type="text">
-                    </dt>
-                </dl>
-                <dl>最大敏捷加值
-                    <dt>
-                        <input type="text">
-                    </dt>
-                </dl>
-                <dl>防具检定减值
-                    <dt>
-                        <input type="text">
-                    </dt>
-                </dl>
-                <dl>奥数失效几率
-                    <dt>
-                        <input type="text">
-                    </dt>
-                </dl>
-                <dl>速度
-                    <dt>
-                        <input type="text">尺
-                    </dt>
-                </dl>
-                <dl>重量
-                    <dt>
-                        <input type="text">磅
-                    </dt>
-                </dl>
-            </div>
-        </div>
-        <button>录入</button>
+        <p>该防具录入<b>不包括加装</b>部分，另外，如果PHB列表中没有值的，以0代替，奥数失效率填小数，
+            速度有俩就 x/x，如果是减值，请写上负号
+        </p>
+        <b>例子：皮甲，10金币，2，6，0，0.1，30/20，15磅
     </div>
 
+    <!-- 武器:
+    武器名称、价格、伤害值(S)、伤害值(M)、重击、射程增量、重量、伤害类别-->
+    <div class="details" style="padding-left: 4rem; float: left;">
+        <div>
+            <dl>防具名称
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>价格
+                <dt>
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('价格格式不规范');this.value='';}">金币
+                </dt>
+            </dl>
+            <dl>盔甲或盾牌加值
+                <dt>
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('盔甲或盾牌价值格式不规范');this.value='';}">
+                </dt>
+            </dl>
+            <dl>最大敏捷加值
+                <dt>
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('最大敏捷加值格式不规范');this.value='';}">
+                </dt>
+            </dl>
+            <dl>防具检定减值
+                <dt>
+                    <input type="text" onchange="if(/-?\d/.test(this.value) - 1){alert('防具减值格式不规范');this.value='';}">
+                </dt>
+            </dl>
+            <dl>奥数失效几率
+                <dt>
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('奥数失效机率格式不规范');this.value='';}">
+                </dt>
+            </dl>
+            <dl>速度
+                <dt>
+                    <input type="text" onchange="if(/(\d\/)?\d/.test(this.value) - 1){alert('速度格式不规范');this.value='';}">尺
+                </dt>
+            </dl>
+            <dl>重量
+                <dt>
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('重量格式不规范');this.value='';}">磅
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <button style="margin-left: 2rem">录入</button>
 
 </body>
 

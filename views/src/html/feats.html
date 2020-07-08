@@ -14,15 +14,35 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+ <![endif]-->
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
+    <style>
+        button {
+            font-size: 18px;
+            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            background-size: 400%;
+            width: 100px;
+            height: 35px;
+            color: white;
+            border-radius: 20px;
+        }
 
+        button:hover {
+            animation: sun 8s infinite;
+        }
+
+        @keyframes sun {
+            100% {
+                background-position: -400% 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,49 +71,43 @@
 
     <!-- 具体录入 -->
 
-    <!-- 专长:
-    专长名称、专长类型、先决条件、效果、特殊
--->
-    <div>
-        <div style="padding: 1.5rem;">
-            <!-- 说明信息 -->
-            <p>这里是说明信息</p>
-        </div>
-        <div>
-            <div style="padding: 1.5rem;">
-                <div>
-                    <dl>专长名称
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>专长类型
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>先决条件
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>效果
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>特殊
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-
-                </div>
-            </div>
-            <button>录入</button>
-        </div>
+    <div style="padding: 1.5rem; color: #bd2d30;">
+        <!-- 说明信息 -->
+        <p>先决条件、特殊如果没有，填无。效果中应包含“正常”的内容
+        </p>
+        <b>例子：杂耍，一般专长，无，「跳跃」与「翻滚」检定获得+2加值，无</b>
     </div>
 
+    <div class="details" style="padding-left: 4rem; float: left;">
+        <div>
+            <dl>专长名称
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>专长类型
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>先决条件
+                <dt>
+                    <textarea name="" id="" cols="23" rows="5"></textarea>
+                </dt>
+            </dl>
+            <dl>效果
+                <dt>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </dt>
+            </dl>
+            <dl>特殊
+                <dt>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <button style="margin-left: 2rem">录入</button>
 
 </body>
 

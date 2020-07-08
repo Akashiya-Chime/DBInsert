@@ -14,15 +14,35 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+ <![endif]-->
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
+    <style>
+        button {
+            font-size: 18px;
+            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            background-size: 400%;
+            width: 100px;
+            height: 35px;
+            color: white;
+            border-radius: 20px;
+        }
 
+        button:hover {
+            animation: sun 8s infinite;
+        }
+
+        @keyframes sun {
+            100% {
+                background-position: -400% 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,39 +71,39 @@
 
     <!-- 具体录入 -->
 
-    <!-- 技能:
-    技能名称、未受训、属性、（技能说明？）
--->
-    <div>
-        <div style="padding: 1.5rem;">
-            <!-- 说明信息 -->
-            <p>这里是说明信息</p>
-        </div>
-        <div>
-            <div style="padding: 1.5rem;">
-                <div>
-                    <dl>技能名称
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>未受训
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>属性
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-
-                </div>
-            </div>
-            <button>录入</button>
-        </div>
+    <div style="padding: 1.5rem; color: #bd2d30;">
+        <!-- 说明信息 -->
+        <p>未受训：指的是“未接受过训练是否可以使用该技能”，所以所填是值是一个布尔值，可以就为1，不可就为0
+            防具减值可以为1，2，0
+        </p>
+        <b>例子：估价，1，智力，0倍</b>
     </div>
 
+    <div class="details" style="padding-left: 4rem; float: left;">
+        <div>
+            <dl>技能名称
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>未受训
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>属性
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>防具减值
+                <dt>
+                <input type="text" onchange="if(/[0-2]/.test(this.value) - 1){alert('防具减值倍数格式不规范')}">倍
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <button style="margin-left: 2rem">录入</button>
 
 </body>
 
