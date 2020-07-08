@@ -32,11 +32,13 @@
             color: white;
             border-radius: 20px;
         }
+
         button:hover {
             animation: sun 8s infinite;
         }
-        @keyframes sun{
-            100%{
+
+        @keyframes sun {
+            100% {
                 background-position: -400% 0;
             }
         }
@@ -69,7 +71,7 @@
 
     <!-- 具体录入 -->
 
-    <div style="padding: 1.5rem;">
+    <div style="padding: 1.5rem; color: #bd2d30;">
         <!-- 说明信息 -->
         <p>武器价格按照金币为单位计算，10银币=1金币。伤害以“xdx”的格式，比如匕首伤害(S)就是1d3。
             重击如果只有倍数就只填倍数，如果有范围则写明，如19-20/2。
@@ -78,9 +80,8 @@
     </div>
 
     <!-- 武器:
-    武器名称、价格、伤害值(S)、伤害值(M)、重击、射程增量、重量、伤害类别
--->
-    <div class="details" style="padding: 1.5rem; float: left;">
+    武器名称、价格、伤害值(S)、伤害值(M)、重击、射程增量、重量、伤害类别-->
+    <div class="details" style="padding-left: 4rem; float: left;">
         <div>
             <dl>武器名称
                 <dt>
@@ -89,32 +90,32 @@
             </dl>
             <dl>价格
                 <dt>
-                    <input type="text">金币
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('价格格式不规范')}">金币
                 </dt>
             </dl>
             <dl>伤害值(S)
                 <dt>
-                    <input type="text">
+                    <input type="text" onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(S)格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>伤害值(M)
                 <dt>
-                    <input type="text">
+                    <input type="text" onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(M)格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>重击
                 <dt>
-                    <input type="text">
+                    <input type="text" placeholder="无校验，一定按照提示">
                 </dt>
             </dl>
             <dl>射程增量
                 <dt>
-                    <input type="text">尺
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('射程增量格式不规范');this.value='';}">尺
                 </dt>
             </dl>
             <dl>重量
                 <dt>
-                    <input type="text">磅
+                    <input type="text" onchange="if(/\D/.test(this.value)){alert('重量格式不规范');this.value='';}">磅
                 </dt>
             </dl>
             <dl>伤害类别
@@ -124,7 +125,7 @@
             </dl>
         </div>
     </div>
-    <button style="margin-left: 1.5rem">录入</button>
+    <button style="margin-left: 2rem">录入</button>
 
 </body>
 

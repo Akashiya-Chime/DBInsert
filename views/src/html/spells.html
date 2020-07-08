@@ -14,15 +14,35 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+ <![endif]-->
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
+    <style>
+        button {
+            font-size: 18px;
+            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            background-size: 400%;
+            width: 100px;
+            height: 35px;
+            color: white;
+            border-radius: 20px;
+        }
 
+        button:hover {
+            animation: sun 8s infinite;
+        }
+
+        @keyframes sun {
+            100% {
+                background-position: -400% 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,77 +71,84 @@
 
     <!-- 具体录入 -->
 
-    <!-- 法术:
-    法术名称、派系、等级、法术成分、施法时间、距离、目标、持续时间、豁免检定、法术抗力、法术描述
--->
-    <div>
-        <div style="padding: 1.5rem;">
-            <!-- 说明信息 -->
-            <p>这里是说明信息</p>
-        </div>
+    <div style="padding: 1.5rem; color: #bd2d30;">
+        <!-- 说明信息 -->
+        <p>这个最多，填的时候要仔细，如果选项没有，则填无，注意，有一点特殊，在填法术名称时，应当加上英文
+        </p>
+        <b>例子：火球术（Fireball）<br>塑能系〔火焰〕，术士／法师 3，言语、姿势、材料，1 标准动作，远距（400 尺+40 尺／每等级）<br>
+            半径 20 尺的扩散范围，立即，反射过则效果减半，可，<br>
+            发出一团带着低鸣的爆发火焰，对区域内所有生物造成每施法者等级 1d6（最高 10d6）点火焰伤害，
+            未被持用的物品也同样受伤。爆炸不会带来风压。 施法者指明欲发动爆炸的爆炸点后（距离和高度），
+            从指尖飞出一个豆粒般大小的炽热火珠，除非在到达该点之前撞到实体或遇到阻碍，
+            不然火珠会在该点爆发成火球（火珠撞击物体会提早爆炸）。如果你想使火珠穿过远方狭缝，
+            必须进行远程接触攻击以命中开口，否则火珠撞到阻碍会提早爆炸。 「火球术」会引燃影响区域内的易燃物，
+            且对物体造成伤害。它可以融化熔点低的金属，如:铅、金、铜、银或青铜。若障碍物因此粉碎或击穿，
+            火焰会延伸到原本障碍之后，否则爆炸力会如同其他法术效果一样受障碍所阻。 材料成分:一小球蝙蝠粪石及硫磺。
+        </b>
+    </div>
+
+
+    <div class="details" style="padding-left: 4rem; float: left;">
         <div>
-            <div style="padding: 1.5rem;">
-                <div>
-                    <dl>法术名称
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>派系
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>等级
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>法术成分
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>施法时间
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>距离
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>目标
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>持续时间
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>豁免检定
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>法术抗力
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                    <dl>法术描述
-                        <dt>
-                            <input type="text">
-                        </dt>
-                    </dl>
-                </div>
-            </div>
-            <button>录入</button>
+            <dl>法术名称
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>派系
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>等级
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>法术成分
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>施法时间
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>距离
+                <dt>
+                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                </dt>
+            </dl>
+            <dl>目标或影响区域
+                <dt>
+                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                </dt>
+            </dl>
+            <dl>持续时间
+                <dt>
+                    <textarea name="" id="" cols="23" rows="3"></textarea>
+                </dt>
+            </dl>
+            <dl>豁免检定
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>法术抗力
+                <dt>
+                    <input type="text">
+                </dt>
+            </dl>
+            <dl>法术描述
+                <dt>
+                    <textarea name="" id="" cols="40" rows="20"></textarea>
+                </dt>
+            </dl>
         </div>
     </div>
+    <button style="margin-left: 2rem">录入</button>
+
 </body>
 
 </html>
