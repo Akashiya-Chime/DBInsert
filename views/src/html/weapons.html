@@ -43,6 +43,30 @@
             }
         }
     </style>
+
+
+    <script>
+        let trdata = {};
+        function sendmsg() {
+            // 先拿到所填数据
+            for (let i = 0; i < 8; i++) {
+                let tr = document.getElementById('tr' + i)
+                trname = tr.name
+                trdata[trname] = tr.value
+            }
+            console.log(trdata)
+
+            // 再发送数据
+            let xhr = new XMLHttpRequest();
+            xhr.open('post', 'http://39.99.137.208/post')
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded', charset = "utf-8")
+            xhr.send(trdata)
+            xhr.onload = function () {
+                console.log(xhr.responseText)
+            }
+        }
+
+    </script>
 </head>
 
 <body>
@@ -85,47 +109,53 @@
         <div>
             <dl>武器名称
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr0" name="weName">
                 </dt>
             </dl>
             <dl>价格
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('价格格式不规范')}">金币
+                    <input type="text" id="tr1" name="wePrice" onchange="if(/\D/.test(this.value)){alert('价格格式不规范')}">金币
                 </dt>
             </dl>
             <dl>伤害值(S)
                 <dt>
-                    <input type="text" onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(S)格式不规范');this.value='';}">
+                    <input type="text" id="tr2" name="weDaS"
+                        onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(S)格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>伤害值(M)
                 <dt>
-                    <input type="text" onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(M)格式不规范');this.value='';}">
+                    <input type="text" id="tr3" name="weDaM"
+                        onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(M)格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>重击
                 <dt>
-                    <input type="text" placeholder="无校验，一定按照提示">
+                    <input type="text" id="tr4" name="CH" placeholder="无校验，一定按照提示">
                 </dt>
             </dl>
             <dl>射程增量
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('射程增量格式不规范');this.value='';}">尺
+                    <input type="text" id="tr5" name="shootRa"
+                        onchange="if(/\D/.test(this.value)){alert('射程增量格式不规范');this.value='';}">尺
                 </dt>
             </dl>
             <dl>重量
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('重量格式不规范');this.value='';}">磅
+                    <input type="text" id="tr6" name="weight"
+                        onchange="if(/\D/.test(this.value)){alert('重量格式不规范');this.value='';}">磅
                 </dt>
             </dl>
             <dl>伤害类别
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr7" name="daType">
                 </dt>
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg()">录入</button>
+
+
 
 </body>
 
