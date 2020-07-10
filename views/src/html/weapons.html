@@ -44,29 +44,9 @@
         }
     </style>
 
+    <!-- 引入发送数据代码 -->
+    <script src="./sendData.js"></script>
 
-    <script>
-        let trdata = {};
-        function sendmsg() {
-            // 先拿到所填数据
-            for (let i = 0; i < 8; i++) {
-                let tr = document.getElementById('tr' + i)
-                trname = tr.name
-                trdata[trname] = tr.value
-            }
-            console.log(trdata)
-
-            // 再发送数据
-            let xhr = new XMLHttpRequest();
-            xhr.open('post', 'http://39.99.137.208/post')
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded', charset = "utf-8")
-            xhr.send(trdata)
-            xhr.onload = function () {
-                console.log(xhr.responseText)
-            }
-        }
-
-    </script>
 </head>
 
 <body>
@@ -153,7 +133,7 @@
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem" onclick="sendmsg()">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg(8)">录入</button>
 
 
 

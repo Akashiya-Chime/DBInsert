@@ -43,6 +43,10 @@
             }
         }
     </style>
+
+    <!-- 引入发送数据代码 -->
+    <script src="./sendData.js"></script>
+
 </head>
 
 <body>
@@ -82,32 +86,32 @@
         <div>
             <dl>专长名称
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr0" name="featName">
                 </dt>
             </dl>
             <dl>专长类型
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr1" name="type">
                 </dt>
             </dl>
             <dl>先决条件
                 <dt>
-                    <textarea name="" id="" cols="23" rows="5"></textarea>
+                    <textarea name="pre" id="tr2" cols="23" rows="5"></textarea>
                 </dt>
             </dl>
             <dl>效果
                 <dt>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="effect" id="tr3" cols="30" rows="10"></textarea>
                 </dt>
             </dl>
             <dl>特殊
                 <dt>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="special" id="tr4" cols="30" rows="10"></textarea>
                 </dt>
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg(5)">录入</button>
 
 </body>
 
