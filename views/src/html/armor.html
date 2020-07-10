@@ -43,6 +43,10 @@
             }
         }
     </style>
+
+    <!-- 引入发送数据代码 -->
+    <script src="./sendData.js"></script>
+
 </head>
 
 <body>
@@ -85,47 +89,54 @@
         <div>
             <dl>防具名称
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr0" name="armorName">
                 </dt>
             </dl>
             <dl>价格
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('价格格式不规范');this.value='';}">金币
+                    <input type="text" id="tr1" name="price"
+                        onchange="if(/\D/.test(this.value)){alert('价格格式不规范');this.value='';}">金币
                 </dt>
             </dl>
             <dl>盔甲或盾牌加值
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('盔甲或盾牌价值格式不规范');this.value='';}">
+                    <input type="text" id="tr2" name="acp"
+                        onchange="if(/\D/.test(this.value)){alert('盔甲或盾牌价值格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>最大敏捷加值
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('最大敏捷加值格式不规范');this.value='';}">
+                    <input type="text" id="tr3" name="dexp"
+                        onchange="if(/\D/.test(this.value)){alert('最大敏捷加值格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>防具检定减值
                 <dt>
-                    <input type="text" onchange="if(/-?\d/.test(this.value) - 1){alert('防具减值格式不规范');this.value='';}">
+                    <input type="text" id="tr4" name="acm"
+                        onchange="if(/-?\d/.test(this.value) - 1){alert('防具减值格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>奥数失效几率
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('奥数失效机率格式不规范');this.value='';}">
+                    <input type="text" id="tr5" name="disspell"
+                        onchange="if(/\D/.test(this.value)){alert('奥数失效机率格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>速度
                 <dt>
-                    <input type="text" onchange="if(/(\d\/)?\d/.test(this.value) - 1){alert('速度格式不规范');this.value='';}">尺
+                    <input type="text" id="tr6" name="speed"
+                        onchange="if(/(\d\/)?\d/.test(this.value) - 1){alert('速度格式不规范');this.value='';}">尺
                 </dt>
             </dl>
             <dl>重量
                 <dt>
-                    <input type="text" onchange="if(/\D/.test(this.value)){alert('重量格式不规范');this.value='';}">磅
+                    <input type="text" id="tr7" name="weight"
+                        onchange="if(/\D/.test(this.value)){alert('重量格式不规范');this.value='';}">磅
                 </dt>
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg(8)">录入</button>
 
 </body>
 

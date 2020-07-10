@@ -43,6 +43,10 @@
             }
         }
     </style>
+
+    <!-- 引入发送数据代码 -->
+    <script src="./sendData.js"></script>
+
 </head>
 
 <body>
@@ -83,27 +87,28 @@
         <div>
             <dl>技能名称
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr0" name="skillName">
                 </dt>
             </dl>
             <dl>未受训
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr1" name="training">
                 </dt>
             </dl>
             <dl>属性
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr2" name="ability">
                 </dt>
             </dl>
             <dl>防具减值
                 <dt>
-                <input type="text" onchange="if(/[0-2]/.test(this.value) - 1){alert('防具减值倍数格式不规范')}">倍
+                    <input type="text" id="tr3" name="minus"
+                        onchange="if(/[0-2]/.test(this.value) - 1){alert('防具减值倍数格式不规范')}">倍
                 </dt>
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg(4)">录入</button>
 
 </body>
 

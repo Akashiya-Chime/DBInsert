@@ -100,6 +100,10 @@ const skillSchema = new Schema({
     ability: {
         type: String,
         require: true
+    },
+    minus: {
+        type: Number,
+        require: true
     }
 })
 

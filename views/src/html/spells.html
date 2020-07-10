@@ -43,6 +43,10 @@
             }
         }
     </style>
+
+    <!-- 引入发送数据代码 -->
+    <script src="./sendData.js"></script>
+
 </head>
 
 <body>
@@ -92,62 +96,62 @@
         <div>
             <dl>法术名称
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr0" name="spellName">
                 </dt>
             </dl>
             <dl>派系
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr1" name="school">
                 </dt>
             </dl>
             <dl>等级
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr2" name="level">
                 </dt>
             </dl>
             <dl>法术成分
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr3" name="element">
                 </dt>
             </dl>
             <dl>施法时间
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr4" name="spellTime">
                 </dt>
             </dl>
             <dl>距离
                 <dt>
-                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                    <textarea name="distance" id="tr5" cols="30" rows="2"></textarea>
                 </dt>
             </dl>
             <dl>目标或影响区域
                 <dt>
-                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                    <textarea name="target" id="tr6" cols="30" rows="2"></textarea>
                 </dt>
             </dl>
             <dl>持续时间
                 <dt>
-                    <textarea name="" id="" cols="23" rows="3"></textarea>
+                    <textarea name="keep" id="tr7" cols="23" rows="3"></textarea>
                 </dt>
             </dl>
             <dl>豁免检定
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr8" name="saving">
                 </dt>
             </dl>
             <dl>法术抗力
                 <dt>
-                    <input type="text">
+                    <input type="text" id="tr9" name="SR">
                 </dt>
             </dl>
             <dl>法术描述
                 <dt>
-                    <textarea name="" id="" cols="40" rows="20"></textarea>
+                    <textarea name="detail" id="tr10" cols="40" rows="20"></textarea>
                 </dt>
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg(11)">录入</button>
 
 </body>
 
