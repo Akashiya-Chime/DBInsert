@@ -13,7 +13,6 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
     res.header("X-Powered-By", ' 3.2.1')
-    // 下面这句好像是全局设置，导致 index.html 也变成了 json 来理解，结果全是源码
     // res.header("Content-Type", "application/json;charset=utf-8");
     next();
   });
