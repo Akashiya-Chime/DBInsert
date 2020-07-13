@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const findUser = require('./findUser')
 
 // 配置 body-parser
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -27,6 +28,19 @@ app.get('/',(req, res) =>{
 
 app.post('/post', (req, res) => {
     res.send(req.body)
+})
+
+app.post('/login', (req, res) => {
+    // if (findUser(req.body.username, req.body.password)) {
+    //     console.log('找到')
+    // } else {
+    //     console.log('没找到')
+    // }
+    findUser(req.body.username, req.body.password)
+    .then((ret) => {
+        res.send(ret)
+        console.log(ret)
+    })
 })
  
 app.listen(80, () => {
