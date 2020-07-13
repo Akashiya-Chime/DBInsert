@@ -43,7 +43,7 @@ app.post('/login', (req, res) => {
     findUser(req.body.username, req.body.password)
     .then((ret) => {
         res.send(ret)
-        console.log(ret)
+        // console.log(ret)
     })
 })
  
