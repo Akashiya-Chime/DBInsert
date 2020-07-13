@@ -26,6 +26,10 @@ app.get('/',(req, res) =>{
     res.render('index.html')
 })
 
+app.get('/loginpage', (req, res) => {
+    res.render('login.html')
+})
+
 app.post('/post', (req, res) => {
     res.send(req.body)
 })
