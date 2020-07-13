@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./src/css/Login.css" />
+	<script src="./src/js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<div id="app" class="container">
+		<div class="form">
+			<div class="form-input-contain" :class="isClicked.isLoginClicked?'active':''">
+				<div class="form-item form-uname" :class="isClicked.isUnameClicked?'active':''">
+					<label @click.self="getUname()">username</label>
+					<input type="text" v-model="formData.username" ref="uname" id="username" />
+				</div>
+				<div class="form-item form-pwd" :class="isClicked.isPwdClicked?'active':''">
+					<label @click.self="getPwd()">password</label>
+					<input type="password" v-model="formData.password" ref="pwd" id="pword" />
+				</div>
+			</div>
+			<button type="button" class="login-btn" :class="isClicked.isLoginClicked?'active':''" @click.self="submit"
+				ref="loginBtn" onclick="login()">login</button>
+		</div>
+		<h2 :class="isClicked.isLoginClicked?'active':''">
+			登录成功，将要跳转页面
+		</h2>
+	</div>
+	<script src="./src/js/Login.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		function login() {
+			// 获取 username 和 password
+			let username = document.getElementById('username').value
+			let password = document.getElementById('pword').value
+			// 发送
+			let xhr = new XMLHttpRequest()
+			// 为啥这里可以用这个？而不是服务器的公网 ip？
+			xhr.open('post', 'http://127.0.0.1/login')
+			xhr.setRequestHeader('Content-Type', 'application/json', charset = "utf-8")
+			xhr.send(JSON.stringify({ 'username': username, 'password': password }))
+			xhr.onload = function () {
+				console.log(xhr.responseText)
+				if (xhr.responseText != null) {
+					god = JSON.parse(xhr.responseText).username
+					console.log(god)
+					sessionStorage.setItem('user', god)
+					setTimeout('window.location.href="/"', 3000)
+				} else {
+					alert('登录失败')
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
