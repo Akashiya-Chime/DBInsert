@@ -1,5 +1,5 @@
 let trdata = {};
-function sendmsg(j) {
+function sendmsg(j, url) {
     // 先拿到所填数据
     for (let i = 0; i < j; i++) {
         let tr = document.getElementById('tr' + i)
@@ -10,7 +10,7 @@ function sendmsg(j) {
 
     // 再发送数据
     let xhr = new XMLHttpRequest();
-    xhr.open('post', 'http://127.0.0.1/post')
+    xhr.open('post', `http://127.0.0.1/${url}`)
     xhr.setRequestHeader('Content-Type', 'application/json', charset = "utf-8")
     xhr.send(JSON.stringify(trdata))
     xhr.onload = function () {

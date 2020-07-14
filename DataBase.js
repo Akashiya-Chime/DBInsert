@@ -1,15 +1,16 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+// 因为在 findUser.js 中已经完成了数据库连接 所以这里就不用了
 // 创建连接
 // 通过将 useNewUrlParser 设置为 true 来避免"不建议使用当前 URL 字符串解析器"警告
-mongoose.connect('mongodb://localhost/dnd', { useNewUrlParser: true });
-// 连接数据库
-const db = mongoose.connection
-db.on('error', console.error.bind(console, '连接数据库错误'))
-db.once('open', () => {
-    console.log('连接数据库成功')
-})
+// mongoose.connect('mongodb://localhost/dnd', { useNewUrlParser: true });
+// // 连接数据库
+// const db = mongoose.connection
+// db.on('error', console.error.bind(console, '连接数据库错误'))
+// db.once('open', () => {
+//     console.log('连接数据库成功')
+// })
 
 // 建立模型
 // 武器
