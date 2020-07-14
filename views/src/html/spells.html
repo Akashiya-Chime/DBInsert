@@ -50,6 +50,21 @@
 </head>
 
 <body>
+    <!-- 验证登录 -->
+    <script>
+        if (sessionStorage.getItem('user') == null) {
+            // alert('请先登录')
+            // window.location.href = '/loginpage'
+            let turn = confirm('请先登录')
+            if (turn) {
+                window.location.href = '/loginpage'
+            } else {
+                // window.location.href = '/'
+                window.close()
+            }
+        }
+    </script>
+
     <!-- 头 -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -151,7 +166,7 @@
             </dl>
         </div>
     </div>
-    <button style="margin-left: 2rem" onclick="sendmsg(11)">录入</button>
+    <button style="margin-left: 2rem" onclick="sendmsg(11, 'spell')">录入</button>
 
 </body>
 

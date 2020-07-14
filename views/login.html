@@ -42,7 +42,7 @@
 			xhr.setRequestHeader('Content-Type', 'application/json', charset = "utf-8")
 			xhr.send(JSON.stringify({ 'username': username, 'password': password }))
 			xhr.onload = function () {
-				// console.log(xhr.responseText)
+				console.log(xhr.responseText)
 				if (xhr.responseText != null) {
 					god = JSON.parse(xhr.responseText).username
 					console.log(god)

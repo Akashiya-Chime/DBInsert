@@ -30,15 +30,11 @@ app.get('/loginpage', (req, res) => {
     res.render('login.html')
 })
 
-app.post('/post', (req, res) => {
-    res.send(req.body)
-})
-
 app.post('/login', (req, res) => {
     // if (findUser(req.body.username, req.body.password)) {
-    //     console.log('找到')
-    // } else {
-    //     console.log('没找到')
+    //     console.log('找到') 
+    // } else { 
+    //     console.log('没找到') 
     // }
     findUser(req.body.username, req.body.password)
     .then((ret) => {
@@ -46,7 +42,33 @@ app.post('/login', (req, res) => {
         // console.log(ret)
     })
 })
- 
+
+// 这里是接受传入的数据
+app.post('/post', (req, res) => {
+    res.send(req.body)
+})
+
+app.post('/weapon', (req, res) => {
+    res.send('收到武器录入')
+})
+
+app.post('/spell', (req, res) => {
+    res.send('收到法术录入')
+})
+
+app.post('/skill', (req, res) => {
+    res.send('收到技能录入')
+})
+
+app.post('/feat', (req, res) => {
+    res.send('收到专长录入')
+})
+
+app.post('/armor', (req, res) => {
+    res.send('收到防具录入')
+})
+
+// 设置监听
 app.listen(80, () => {
     console.log('Serve is on...')
 })
