@@ -13,42 +13,7 @@ const Schema = mongoose.Schema
 // })
 
 // 建立模型
-// 武器
-// 武器名称、价格、伤害值(S)、伤害值(M)、重击、射程增量、重量、伤害类别 
-const weaponSchema = new Schema({
-    name: {
-        type: String,
-        require: true
-    },
-    price: {
-        type: Number,
-        require: true
-    },
-    damageS: {
-        type: String,
-        require: true
-    },
-    damageM: {
-        type: String,
-        require: true
-    },
-    CH: {
-        type: String,
-        require: true
-    },
-    shootRange: {
-        type: Number,
-        require: true
-    },
-    weight: {
-        type: Number,
-        require: true
-    },
-    damageType: {
-        type: String,
-        require: true
-    }
-})
+
 
 // 防具
 // 防具名称、价格、盔甲或盾牌加值、最大敏捷加值、防具检定减值、奥数失效几率、速度、重量
@@ -184,36 +149,78 @@ const spellSchema = new Schema({
 
 
 // 启用模型
-const Weapon = mongoose.model('Weapon', weaponSchema)
+
 const Armer = mongoose.model('Amer', armorSchema)
 const Skill = mongoose.model('Skill', skillSchema)
 const Feat = mongoose.model('Feat', featSchema)
 const Spell = mongoose.model('Spell', spellSchema)
 
 
-// 测试录入
-let dagger = new Weapon({
-    name: '匕首',
-    price: 2,
-    damageS: '1d3',
-    damageM: '1d4',
-    ch: '19-20/2',
-    shootRange: 10,
-    weight: 1,
-    damageType: '穿刺或挥砍'
-})
 
-// 测试保存
-dagger.save((err, ret) => {
-    if (err) {
-        throw err
-    }
-    else {
-        console.log('保存成功')
-    }
-})
+
+
 
 // 不能调用 close。。。
 // db.on('disconnected', () => {
 //     console.log('断开连接')
 // });
+
+// 保存 weapon
+function saveWeapons(data) {
+    // 武器
+    // 武器名称、价格、伤害值(S)、伤害值(M)、重击、射程增量、重量、伤害类别 
+    const weaponSchema = new Schema({
+        name: {
+            type: String,
+            require: true
+        },
+        price: {
+            type: Number,
+            require: true
+        },
+        damageS: {
+            type: String,
+            require: true
+        },
+        damageM: {
+            type: String,
+            require: true
+        },
+        CH: {
+            type: String,
+            require: true
+        },
+        shootRange: {
+            type: Number,
+            require: true
+        },
+        weight: {
+            type: Number,
+            require: true
+        },
+        damageType: {
+            type: String,
+            require: true
+        }
+    })
+
+    // 启用
+    const Weapon = mongoose.model('Weapon', weaponSchema)
+
+    // 测试录入
+    let weaponData = new Weapon(data)
+
+    // 测试保存
+    weaponData.save((err, ret) => {
+        if (err) {
+            throw err
+        }
+        else {
+            console.log('保存成功')
+        }
+    })
+}
+
+module.exports = {
+    saveWeapons: saveWeapons()
+}

@@ -11,6 +11,7 @@
     <link href="../css/main.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/site.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/insertPage.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,27 +23,6 @@
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
-    <style>
-        button {
-            font-size: 18px;
-            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-            background-size: 400%;
-            width: 100px;
-            height: 35px;
-            color: white;
-            border-radius: 20px;
-        }
-
-        button:hover {
-            animation: sun 8s infinite;
-        }
-
-        @keyframes sun {
-            100% {
-                background-position: -400% 0;
-            }
-        }
-    </style>
 
     <!-- 引入发送数据代码 -->
     <script src="../js/sendData.js"></script>
@@ -52,6 +32,10 @@
 <body>
     <!-- 验证登录 -->
     <script>
+<<<<<<< Updated upstream
+=======
+        // 放这很危险，最好放后端去
+>>>>>>> Stashed changes
         if (sessionStorage.getItem('user') == null) {
             // alert('请先登录')
             // window.location.href = '/loginpage'

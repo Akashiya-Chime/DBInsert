@@ -1,7 +1,9 @@
 const express = require('express')
-const app = express()
 const bodyParser = require('body-parser')
 const findUser = require('./findUser')
+const saveWeapon = require('./saveWeapon')
+
+const app = express()
 
 // 配置 body-parser
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -48,8 +50,16 @@ app.post('/post', (req, res) => {
     res.send(req.body)
 })
 
+<<<<<<< Updated upstream
 app.post('/weapon', (req, res) => {
     res.send('收到武器录入')
+=======
+// 正式录入
+app.post('/weapon', (req, res) => {
+    res.send('收到武器录入')
+    saveWeapon.saveOne(req.body)
+    // console.log(req.body)
+>>>>>>> Stashed changes
 })
 
 app.post('/spell', (req, res) => {

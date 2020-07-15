@@ -11,6 +11,7 @@
     <link href="../css/main.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/site.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/insertPage.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,27 +23,7 @@
     <link rel="apple-touch-icon-precomposed"
         href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
-    <style>
-        button {
-            font-size: 18px;
-            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-            background-size: 400%;
-            width: 100px;
-            height: 35px;
-            color: white;
-            border-radius: 20px;
-        }
 
-        button:hover {
-            animation: sun 8s infinite;
-        }
-
-        @keyframes sun {
-            100% {
-                background-position: -400% 0;
-            }
-        }
-    </style>
 
     <!-- 引入发送数据代码 -->
     <script src="../js/sendData.js"></script>
@@ -103,23 +84,23 @@
         <div>
             <dl>武器名称
                 <dt>
-                    <input type="text" id="tr0" name="weName">
+                    <input type="text" id="tr0" name="name">
                 </dt>
             </dl>
             <dl>价格
                 <dt>
-                    <input type="text" id="tr1" name="wePrice" onchange="if(/\D/.test(this.value)){alert('价格格式不规范')}">金币
+                    <input type="text" id="tr1" name="price" onchange="if(/\D/.test(this.value)){alert('价格格式不规范');this.value=''}">金币
                 </dt>
             </dl>
             <dl>伤害值(S)
                 <dt>
-                    <input type="text" id="tr2" name="weDaS"
+                    <input type="text" id="tr2" name="damageS"
                         onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(S)格式不规范');this.value='';}">
                 </dt>
             </dl>
             <dl>伤害值(M)
                 <dt>
-                    <input type="text" id="tr3" name="weDaM"
+                    <input type="text" id="tr3" name="damageM"
                         onchange="if(/\dd\d/.test(this.value) - 1){alert('伤害值(M)格式不规范');this.value='';}">
                 </dt>
             </dl>
@@ -130,7 +111,7 @@
             </dl>
             <dl>射程增量
                 <dt>
-                    <input type="text" id="tr5" name="shootRa"
+                    <input type="text" id="tr5" name="shootRange"
                         onchange="if(/\D/.test(this.value)){alert('射程增量格式不规范');this.value='';}">尺
                 </dt>
             </dl>
@@ -142,13 +123,19 @@
             </dl>
             <dl>伤害类别
                 <dt>
-                    <input type="text" id="tr7" name="daType">
+                    <input type="text" id="tr7" name="damageType">
                 </dt>
             </dl>
         </div>
     </div>
     <button style="margin-left: 2rem" onclick="sendmsg(8, 'weapon')">录入</button>
+<<<<<<< Updated upstream
 
+=======
+    <div id="showMe">
+        <p>这里展示数据</p>
+    </div>
+>>>>>>> Stashed changes
 
 
 </body>

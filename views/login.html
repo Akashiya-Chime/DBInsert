@@ -37,8 +37,13 @@
 			// 发送
 			let xhr = new XMLHttpRequest()
 			// 为啥这里可以用这个？而不是服务器的公网 ip？
+<<<<<<< Updated upstream
 			// 好吧，还是要的
 			xhr.open('post', 'http://39.99.137.208/login')
+=======
+			// 好吧还是要的
+			xhr.open('post', 'http://127.0.0.1/login')  // 这里要改成服务器ip
+>>>>>>> Stashed changes
 			xhr.setRequestHeader('Content-Type', 'application/json', charset = "utf-8")
 			xhr.send(JSON.stringify({ 'username': username, 'password': password }))
 			xhr.onload = function () {
