@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const findUser = require('./findUser')
-const saveWeapon = require('./saveWeapon')
+const findUser = require('./local/findUser')
+const saveData = require('./local/saveData')
 
 const app = express()
 
@@ -41,7 +41,7 @@ app.post('/login', (req, res) => {
     findUser(req.body.username, req.body.password)
     .then((ret) => {
         res.send(ret)
-        // console.log(ret)
+        console.log(ret)
     })
 })
 
@@ -50,32 +50,31 @@ app.post('/post', (req, res) => {
     res.send(req.body)
 })
 
-<<<<<<< Updated upstream
-app.post('/weapon', (req, res) => {
-    res.send('收到武器录入')
-=======
 // 正式录入
 app.post('/weapon', (req, res) => {
     res.send('收到武器录入')
-    saveWeapon.saveOne(req.body)
+    saveData.saveWeapon(req.body)
     // console.log(req.body)
->>>>>>> Stashed changes
 })
 
 app.post('/spell', (req, res) => {
     res.send('收到法术录入')
+    saveData.saveSpell(req.body)
 })
 
 app.post('/skill', (req, res) => {
     res.send('收到技能录入')
+    saveData.saveSkill(req.body)
 })
 
 app.post('/feat', (req, res) => {
     res.send('收到专长录入')
+    saveData.saveFeat(req.body)
 })
 
 app.post('/armor', (req, res) => {
     res.send('收到防具录入')
+    saveData.saveArmor(req.body)
 })
 
 // 设置监听

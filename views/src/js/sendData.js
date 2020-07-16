@@ -11,10 +11,7 @@ function sendmsg(j, url) {
 
     // 再发送数据
     let xhr = new XMLHttpRequest();
-<<<<<<< Updated upstream
-=======
     // 这里也要改成服务器ip
->>>>>>> Stashed changes
     xhr.open('post', `http://127.0.0.1/${url}`)
     xhr.setRequestHeader('Content-Type', 'application/json', charset = "utf-8")
     xhr.send(JSON.stringify(trdata))
