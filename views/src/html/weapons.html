@@ -26,7 +26,7 @@
 
 
     <!-- 引入发送数据代码 -->
-    <script src="../js/sendData.js"></script>
+    <script src="../js/sendAndget.js"></script>
 
 </head>
 
@@ -129,9 +129,15 @@
         </div>
     </div>
     <button style="margin-left: 2rem" onclick="sendmsg(8, 'weapon')">录入</button>
-    <div id="showMe">
-        <p>这里展示数据</p>
+
+    <div id="tan">
+        <h2>已录入的数据</h2>
+        <div id="showMe">
+            <p id="con"></p>
+        </div>
     </div>
+
+    <button style="margin-left: 2rem" onclick="showData('showWeapon')">查看</button>
 
 
 </body>

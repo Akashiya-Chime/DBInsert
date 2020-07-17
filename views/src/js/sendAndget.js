@@ -20,3 +20,25 @@ function sendmsg(j, url) {
         alert('数据已接收')
     }
 }
+
+
+// 处理数据显示
+function showData(what) {
+    // 先清空
+    let con = document.getElementById('showMe')
+    con.innerHTML = ''
+    // 再输入
+    let getXhr = new XMLHttpRequest();
+    getXhr.open('get', `http://127.0.0.1/${what}`)
+    getXhr.send()
+    getXhr.onload = function () {
+        let data = JSON.parse(getXhr.responseText)
+        // console.log(data)
+        for (i in data) {
+            // console.log(data[i])
+            let node = document.createElement('h4')
+            node.innerHTML = `(${Number(i)+1})${data[i].name}，`
+            con.appendChild(node)
+        }
+    }
+}

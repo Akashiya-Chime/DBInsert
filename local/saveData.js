@@ -242,5 +242,49 @@ module.exports = {
                 console.log('保存成功')
             }
         })
-    }
+    },
+
+    // **************************************************************
+
+    // 展示数据
+    showWeapon: function () {
+        return new Promise((resolve, reject) => {
+            Weapon.find({}, (err, ret) => {
+                if (err) reject(err)
+                else resolve(ret)
+            })
+        })
+    },
+    showArmor: function () {
+        return new Promise((resolve, reject) => {
+            Armor.find({}, (err, ret) => {
+                if (err) reject(err)
+                else resolve(ret)
+            })
+        })
+    },
+    showFeat: function () {
+        return new Promise((resolve, reject) => {
+            Feat.find({}, (err, ret) => {
+                if (err) reject(err)
+                else resolve(ret)
+            })
+        })
+    },
+    showSkill: function () {
+        return new Promise((resolve, reject) => {
+            Skill.find({}, (err, ret) => {
+                if (err) reject(err)
+                else resolve(ret)
+            })
+        })
+    },
+    showSpell: function () {
+        return new Promise((resolve, reject) => {
+            Spell.find({}, (err, ret) => {
+                if (err) reject(err)
+                else resolve(ret)
+            })
+        })
+    },
 }

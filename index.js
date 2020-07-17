@@ -18,13 +18,13 @@ app.all('*', function (req, res, next) {
     res.header("X-Powered-By", ' 3.2.1')
     // res.header("Content-Type", "application/json;charset=utf-8");
     next();
-  });
+});
 
 app.engine('html', require('express-art-template'))
 
 app.use('/src', express.static('./views/src'))
 
-app.get('/',(req, res) =>{
+app.get('/', (req, res) => {
     res.render('index.html')
 })
 
@@ -39,16 +39,18 @@ app.post('/login', (req, res) => {
     //     console.log('没找到') 
     // }
     findUser(req.body.username, req.body.password)
-    .then((ret) => {
-        res.send(ret)
-        console.log(ret)
-    })
+        .then((ret) => {
+            res.send(ret)
+            console.log(ret)
+        })
 })
 
 // 这里是接受传入的数据
 app.post('/post', (req, res) => {
     res.send(req.body)
 })
+
+// ************************************************************************
 
 // 正式录入
 app.post('/weapon', (req, res) => {
@@ -76,6 +78,56 @@ app.post('/armor', (req, res) => {
     res.send('收到防具录入')
     saveData.saveArmor(req.body)
 })
+
+// ***********************************************************************
+
+// 展示数据
+app.get('/showWeapon', (req, res) => {
+    // res.send('已接收')
+    saveData.showWeapon()
+        .then((ret) => {
+            res.send(ret)
+            // console.log(ret)
+        })
+})
+
+app.get('/showArmor', (req, res) => {
+    // res.send('已接收')
+    saveData.showArmor()
+        .then((ret) => {
+            res.send(ret)
+            // console.log(ret)
+        })
+})
+
+app.get('/showFeat', (req, res) => {
+    // res.send('已接收')
+    saveData.showFeat()
+        .then((ret) => {
+            res.send(ret)
+            // console.log(ret)
+        })
+})
+
+app.get('/showSkill', (req, res) => {
+    // res.send('已接收')
+    saveData.showSkill()
+        .then((ret) => {
+            res.send(ret)
+            // console.log(ret)
+        })
+})
+
+app.get('/showSpell', (req, res) => {
+    // res.send('已接收')
+    saveData.showSpell()
+        .then((ret) => {
+            res.send(ret)
+            // console.log(ret)
+        })
+})
+
+// *************************************************************************
 
 // 设置监听
 app.listen(80, () => {

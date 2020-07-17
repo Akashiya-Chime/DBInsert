@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.28/dist/ico/favicon.ico">
 
     <!-- 引入发送数据代码 -->
-    <script src="../js/sendData.js"></script>
+    <script src="../js/sendAndget.js"></script>
 
 </head>
 
@@ -103,6 +103,15 @@
         </div>
     </div>
     <button style="margin-left: 2rem" onclick="sendmsg(4, 'skill')">录入</button>
+
+    <div id="tan">
+        <h2>已录入的数据</h2>
+        <div id="showMe">
+            <p id="con"></p>
+        </div>
+    </div>
+
+    <button style="margin-left: 2rem" onclick="showData('showSkill')">查看</button>
 
 </body>
 
