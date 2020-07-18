@@ -16,8 +16,9 @@ function sendmsg(j, url) {
     xhr.setRequestHeader('Content-Type', 'application/json', charset = "utf-8")
     xhr.send(JSON.stringify(trdata))
     xhr.onload = function () {
-        console.log(xhr.responseText)
-        alert('数据已接收')
+        // console.log(xhr.responseText)
+        // alert('数据已接收')
+        alert(xhr.responseText)
     }
 }
 

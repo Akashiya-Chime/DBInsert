@@ -54,29 +54,60 @@ app.post('/post', (req, res) => {
 
 // 正式录入
 app.post('/weapon', (req, res) => {
-    res.send('收到武器录入')
-    saveData.saveWeapon(req.body)
-    // console.log(req.body)
+    // res.send('收到武器录入')
+    // if (saveData.findData(req.body.name, 'Weapon')) {}
+    saveData.findData(req.body.name, 'Weapon').then((ret) => {
+        if (ret == null) {
+            saveData.saveWeapon(req.body)
+            res.send('成功录入')
+        } else {
+            res.send('该数据已录入，请勿重复录入')
+        }
+    })
 })
 
 app.post('/spell', (req, res) => {
-    res.send('收到法术录入')
-    saveData.saveSpell(req.body)
+    saveData.findData(req.body.name, 'Spell').then((ret) => {
+        if (ret == null) {
+            saveData.saveWeapon(req.body)
+            res.send('成功录入')
+        } else {
+            res.send('该数据已录入，请勿重复录入')
+        }
+    })
 })
 
 app.post('/skill', (req, res) => {
-    res.send('收到技能录入')
-    saveData.saveSkill(req.body)
+    saveData.findData(req.body.name, 'Skill').then((ret) => {
+        if (ret == null) {
+            saveData.saveWeapon(req.body)
+            res.send('成功录入')
+        } else {
+            res.send('该数据已录入，请勿重复录入')
+        }
+    })
 })
 
 app.post('/feat', (req, res) => {
-    res.send('收到专长录入')
-    saveData.saveFeat(req.body)
+    saveData.findData(req.body.name, 'Feat').then((ret) => {
+        if (ret == null) {
+            saveData.saveWeapon(req.body)
+            res.send('成功录入')
+        } else {
+            res.send('该数据已录入，请勿重复录入')
+        }
+    })
 })
 
 app.post('/armor', (req, res) => {
-    res.send('收到防具录入')
-    saveData.saveArmor(req.body)
+    saveData.findData(req.body.name, 'Armor').then((ret) => {
+        if (ret == null) {
+            saveData.saveWeapon(req.body)
+            res.send('成功录入')
+        } else {
+            res.send('该数据已录入，请勿重复录入')
+        }
+    })
 })
 
 // ***********************************************************************

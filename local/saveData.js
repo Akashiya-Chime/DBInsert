@@ -287,4 +287,46 @@ module.exports = {
             })
         })
     },
+    findData: function (fromName, type) {
+        if (type == 'Weapon') {
+            // Weapon.findOne({'name': fromName}, (err, ret) => {
+            //     if (err) throw err
+            //     else console.log(ret)
+            // })
+            return new Promise((resolve, reject) => {
+                Weapon.findOne({'name': fromName}, (err, ret) => {
+                    if (err) reject(err)
+                    else resolve(ret)
+                })
+            })
+        } else if (type == 'Armor') {
+            return new Promise((resolve, reject) => {
+                Armor.findOne({'name': fromName}, (err, ret) => {
+                    if (err) reject(err)
+                    else resolve(ret)
+                })
+            })
+        } else if (type == 'Feat') {
+            return new Promise((resolve, reject) => {
+                Feat.findOne({'name': fromName}, (err, ret) => {
+                    if (err) reject(err)
+                    else resolve(ret)
+                })
+            })
+        } else if (type == 'Skill') {
+            return new Promise((resolve, reject) => {
+                Skill.findOne({'name': fromName}, (err, ret) => {
+                    if (err) reject(err)
+                    else resolve(ret)
+                })
+            })
+        } else if (type == 'Spell') {
+            return new Promise((resolve, reject) => {
+                Spell.findOne({'name': fromName}, (err, ret) => {
+                    if (err) reject(err)
+                    else resolve(ret)
+                })
+            })
+        }
+    }
 }
